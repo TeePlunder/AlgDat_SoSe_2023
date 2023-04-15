@@ -20,10 +20,13 @@ int main() {
     cin >> tempValue;
 
     if (tempUnit == fahrenheitUnit) {
-        cout << tempValue << "F wird in Celsius umgerechnet" << endl;
+        cout << tempValue << fahrenheitUnit << " wird in Celsius umgerechnet" << endl;
         convertedTemp = 5.0 / 9.0 * (tempValue - 32.0);
         cout << tempValue << fahrenheitUnit << " = " << convertedTemp << celsiusUnit << endl;
+    } else {
+        cout << tempValue << celsiusUnit << " wird in Fahrenheit umgerechnet" << endl;
+        convertedTemp = tempValue * 1.8 + 32.0;
+        cout << tempValue << celsiusUnit << " = " << convertedTemp << fahrenheitUnit << endl;
     }
-
     return 0;
 }
