@@ -12,19 +12,20 @@ string toLowerCase(string str) {
 
 int main() {
     string tempUnit;
-    const string celsiusUnit = "C", fahrenheitUnit = "F";
-    double tempValue = 0.0, convertedTemp = 0.0;
+    const string celsiusUnit = "C", fahrenheitUnit = "F",
+            celsiusUnitLower = toLowerCase(celsiusUnit), fahrenheitUnitLower = toLowerCase(fahrenheitUnit);
+    double tempValue = 0.0, convertedTemp;
 
     // set temperature unit
     cout << "Möchten Sie die Temperatur " << celsiusUnit << " (Celsius) oder " << fahrenheitUnit
-         << " (Fahrenheit) angeben? (" << celsiusUnit << "/" << fahrenheitUnit << "): ";
+         << " (Fahrenheit) angeben? (" << celsiusUnitLower << "/" << fahrenheitUnitLower << "): ";
     cin >> tempUnit;
-    if (tempUnit != celsiusUnit && tempUnit != fahrenheitUnit) {
+    if (tempUnit != celsiusUnitLower && tempUnit != fahrenheitUnitLower) {
         throw exception();
     }
 
     // set temperature value
-    cout << "Welche Temperatur soll umgewandet werden?: ";
+    cout << "Welche Temperatur soll umgewandelt werden?: ";
     cin >> tempValue;
 
     if (tempUnit == fahrenheitUnit) {
@@ -36,5 +37,6 @@ int main() {
         convertedTemp = tempValue * 1.8 + 32.0;
         cout << tempValue << celsiusUnit << " = " << convertedTemp << fahrenheitUnit << endl;
     }
+
     return 0;
 }
