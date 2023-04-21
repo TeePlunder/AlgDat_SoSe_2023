@@ -1,7 +1,26 @@
 #include <iostream>
+#include <sstream>
 
 using namespace std;
 
+int newConsoleInput(const string& message,int minRange, int maxRange) {
+    bool validInput = false;
+    int inputValue;
+
+    while (!validInput) {
+        ostringstream os;
+        os << "Die Eingabe muss sich zwischen " << minRange << " und " << maxRange << " befinden";
+        cout << message << " (" << os.str() << "): ";
+        cin >> inputValue;
+
+        if(minRange <= inputValue && inputValue <= maxRange) {
+            validInput = true;
+        } else {
+            cout << "ERROR: " << os.str() << endl;
+        }
+    }
+    return inputValue;
+}
 int main() {
     int decimal = 223;
     int numberSystem = 2;
@@ -27,6 +46,8 @@ int main() {
         int restValue = rest[x];
         char value = sym[restValue];
         cout << value;
+        decimal = newConsoleInput("Welche Dezimalzahl soll umgewandelt werden? [0 = Programmende]", MIN_DECIMAL_RANGE, MAX_DECIMAL_RANGE);
+        numberSystem = newConsoleInput("In welches Zahlensystem soll die Zahl umgewandelt werden?", MIN_NUMBER_SYSTEM, MAX_NUMBER_SYSTEM);
     }
 
     cout << " (" << numberSystem << ")" << endl;
