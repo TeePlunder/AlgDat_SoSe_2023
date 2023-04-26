@@ -28,7 +28,7 @@ int main() {
     const int MIN_NUMBER_SYSTEM = 2, MAX_NUMBER_SYSTEM=16;
     bool terminateProgram = false;
 
-    while (!terminateProgram) {
+    do {
         cout << "neue Konvertierung gestartet" << endl;
         decimal = newConsoleInput("Welche Dezimalzahl soll umgewandelt werden? [0 = Programmende]", MIN_DECIMAL_RANGE, MAX_DECIMAL_RANGE);
 
@@ -61,6 +61,7 @@ int main() {
 
         cout << " (" << numberSystem << ")" << endl << endl;
     }
+    while (!terminateProgram);
 
     cout << "Das Programm wird beendet";
     return 0;
