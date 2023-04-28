@@ -26,14 +26,13 @@ int main() {
     int decimal, numberSystem;
     const int MIN_DECIMAL_RANGE = 0, MAX_DECIMAL_RANGE = INT_MAX;
     const int MIN_NUMBER_SYSTEM = 2, MAX_NUMBER_SYSTEM=16;
-    bool terminateProgram = false;
 
     do {
         cout << "neue Konvertierung gestartet" << endl;
         decimal = newConsoleInput("Welche Dezimalzahl soll umgewandelt werden? [0 = Programmende]", MIN_DECIMAL_RANGE, MAX_DECIMAL_RANGE);
 
         if(decimal == 0) {
-            terminateProgram = true;
+            return 0;
         }
 
         numberSystem = newConsoleInput("In welches Zahlensystem soll die Zahl umgewandelt werden?", MIN_NUMBER_SYSTEM, MAX_NUMBER_SYSTEM);
@@ -61,9 +60,6 @@ int main() {
 
         cout << " (" << numberSystem << ")" << endl << endl;
     }
-    while (!terminateProgram);
-
-    cout << "Das Programm wird beendet";
-    return 0;
+    while (true);
 }
 
