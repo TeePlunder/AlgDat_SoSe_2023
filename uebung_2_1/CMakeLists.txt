@@ -3,4 +3,4 @@ project(uebung_2_1)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(uebung_2_1 main.cpp)
+add_executable(uebung_2_1 main.cpp MESSUNG.cpp MESSUNG.h)
