@@ -43,9 +43,9 @@ void MESSUNG::print() {
     cout << "]" << endl;
 }
 
-void MESSUNG::vergleiche(const MESSUNG &m) {
-    for (int x = 0; x < m.anzahl; ++x) {
-        double wert1 = m.messwert[x];
+void MESSUNG::vergleiche(const MESSUNG &messung) {
+    for (int x = 0; x < messung.anzahl; ++x) {
+        double wert1 = messung.messwert[x];
         double wert2 = this->messwert[x];
 
         if(wert1 > wert2) {

@@ -16,7 +16,7 @@ public:
     void setMesswert(int index, double wert);
     ~MESSUNG();
     void print();
-    void vergleiche(const MESSUNG &m);
+    void vergleiche(const MESSUNG &messung);
 };
 
 
