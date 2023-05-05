@@ -9,13 +9,14 @@
 class MESSUNG {
 private:
     double *messwert;
-    int anzahl;
+    int anzahl{};
 public:
-    MESSUNG(int n);
+    MESSUNG(int anzahl);
     MESSUNG(const MESSUNG &m);
     void setMesswert(int index, double wert);
     ~MESSUNG();
     void print();
+    void vergleiche(const MESSUNG &m);
 };
 
 
