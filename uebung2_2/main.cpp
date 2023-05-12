@@ -11,9 +11,9 @@ int main() {
     cin >> filename;
 
     ifstream articleFile(basePath + filename + fileExtention);
-    ofstream cheapArticleFile(basePath + cheapArticlesFilename + fileExtention);
+    ofstream cheapArticlesFile(basePath + cheapArticlesFilename + fileExtention);
 
-    if (articleFile.fail() || cheapArticleFile.fail()) {
+    if (articleFile.fail() || cheapArticlesFile.fail()) {
         cout << "Fehler beim öffnen der Datei" << endl;
         return -1;
     }
@@ -21,21 +21,20 @@ int main() {
     int cheapArticlesCount = 0;
     while (articleFile.good()) {
         articleFile >> article >> price;
+
         if (articleFile.good()) {
             if (price < 100.00) {
                 cheapArticlesCount++;
-                cout << article << " " << price << endl;
+                cheapArticlesFile << article << " " << price << endl;
             }
-        } else {
-            if (!articleFile.eof()) {
-                cout << "Fehler beim Lesen der Datei. Vielleicht fehlt ein Wert?" << endl;
-                return -1;
-            }
+        } else if (!articleFile.eof()) {
+            cout << "Fehler beim Lesen der Datei. Vielleicht fehlt ein Wert?" << endl;
+            return -1;
         }
     }
     cout << cheapArticlesCount << " Artikel kosten unter 100€";
     articleFile.close();
-    cheapArticleFile.close();
+    cheapArticlesFile.close();
 
     return 0;
 }
