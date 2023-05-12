@@ -17,13 +17,20 @@ int main() {
         cout << "Fehler beim öffnen der Datei" << endl;
         return -1;
     }
-    
+
     int cheapArticlesCount = 0;
     while (articleFile.good()) {
         articleFile >> article >> price;
-        if (price < 100.00) {
-            cheapArticlesCount++;
-            cheapArticleFile << article << " " << price << endl;
+        if (articleFile.good()) {
+            if (price < 100.00) {
+                cheapArticlesCount++;
+                cout << article << " " << price << endl;
+            }
+        } else {
+            if (!articleFile.eof()) {
+                cout << "Fehler beim Lesen der Datei. Vielleicht fehlt ein Wert?" << endl;
+                return -1;
+            }
         }
     }
     cout << cheapArticlesCount << " Artikel kosten unter 100€";
