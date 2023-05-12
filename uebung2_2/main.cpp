@@ -22,13 +22,11 @@ int main() {
     while (articleFile.good()) {
         articleFile >> article >> price;
         if (price < 100.00) {
-            cout << article << " kostet weniger als 100€" << endl;
             cheapArticlesCount++;
             cheapArticleFile << article << " " << price << endl;
-        } else {
-            cout << article << ": " << price << " €" << endl;
         }
     }
+    cout << cheapArticlesCount << " Artikel kosten unter 100€";
     articleFile.close();
     cheapArticleFile.close();
 
