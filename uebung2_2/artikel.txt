@@ -1,13 +1,13 @@
 Computer 499.00
 Radio 34.99
 Schreibtisch 123.50
-Festplatte 79.00
 Fahrrad 379.90
-Armbanduhr 218.0
-Drucker 84.99
 Bohrmaschine 149.0
 Sessel 267.50
-Regal 57.40
 Teppich 333.99
+Armbanduhr 20.00
+Festplatte 79.00
+Regal 57.40
+Drucker 84.99
 
 
