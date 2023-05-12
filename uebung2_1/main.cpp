@@ -12,6 +12,7 @@ int main() {
     MESSUNG messung2(messung1);
     messung2.print();
 
+    messung2.setMesswert(-100000, 6);
     messung2.setMesswert(3, 6);
 
     messung1.vergleiche(messung2);

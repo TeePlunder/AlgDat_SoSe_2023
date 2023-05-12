@@ -29,6 +29,10 @@ delete [] messwert;
 }
 
 void MESSUNG::setMesswert(int index, double wert) {
+    if(index < 0 || index > this->anzahl) {
+        cout << "index out of range" << endl;
+        return;
+    }
     this->messwert[index] = wert;
 }
 
