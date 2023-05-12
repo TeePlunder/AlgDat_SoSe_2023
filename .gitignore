@@ -77,3 +77,4 @@ fabric.properties
 # cmake build and debug folder
 cmake-build-*
 .DS-Store
+**/.DS-Store
