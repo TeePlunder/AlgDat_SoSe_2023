@@ -5,6 +5,10 @@
 #ifndef UEBUNG_2_1_MESSUNG_H
 #define UEBUNG_2_1_MESSUNG_H
 
+struct minmax {
+    double min;
+    double max;
+};
 
 class MESSUNG {
 private:
@@ -17,6 +21,7 @@ public:
     ~MESSUNG();
     void print();
     void vergleiche(const MESSUNG &messung);
+    struct minmax minmax();
 };
 
 
