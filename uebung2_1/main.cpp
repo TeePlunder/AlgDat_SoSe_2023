@@ -17,5 +17,9 @@ int main() {
 
     messung1.vergleiche(messung2);
 
+    struct minmax ergebnis{};
+    ergebnis = messung2.minmax();
+    cout << "MinWert: " << ergebnis.min << " MaxWert: " << ergebnis.max << endl;
+
     return 0;
 }
