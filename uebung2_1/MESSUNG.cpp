@@ -4,6 +4,7 @@
 
 #include "MESSUNG.h"
 #include <iostream>
+#include <cfloat>
 
 using namespace std;
 
@@ -64,4 +65,24 @@ void MESSUNG::vergleiche(const MESSUNG &messung) {
         }
 
     }
+}
+
+struct minmax MESSUNG::minmax() {
+    struct minmax values{};
+
+    double minWert = DBL_MAX;
+    double maxWert = DBL_MIN;
+
+    for (int x = 0; x < (this->anzahl - 1); ++x) {
+        double messWert = this->messwert[x];
+        if (messWert < minWert) {
+            minWert = messWert;
+        }
+        if (messWert > maxWert) {
+            maxWert = messWert;
+        }
+    }
+    values.min = minWert;
+    values.max = maxWert;
+    return values;
 }
