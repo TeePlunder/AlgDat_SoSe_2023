@@ -53,7 +53,7 @@ void LISTE::connect(const LISTE &liste2) {
 
 void LISTE::remove(int ID) {
     LISTELEM *current = head;
-    auto *toDelete = new LISTELEM();
+    LISTELEM *toDelete;
 
     while (current->next != current->next->next && current->next->ID != ID) {
         current = current->next;
