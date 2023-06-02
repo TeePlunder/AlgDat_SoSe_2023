@@ -35,9 +35,16 @@ void LISTE::append(int ID) {
 }
 
 void LISTE::insert(int ID) {
-    LISTELEM *such, *neu;
+    LISTELEM *current = head;
+    auto *neu = new LISTELEM();
+    neu->ID = ID;
 
+    while (current->next != current->next->next && current->next->ID < ID) {
+        current = current->next;
+    }
 
+    neu->next = current->next;
+    current->next = neu;
 }
 
 void LISTE::connect(const LISTE &liste2) {
