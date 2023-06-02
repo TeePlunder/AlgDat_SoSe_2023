@@ -53,27 +53,26 @@ void LISTE::remove(int ID) {
     LISTELEM *current = head;
     LISTELEM *toDelete;
 
-    while (current->next != current->next->next && current->next->ID != ID) {
-        current = current->next;
+    while (current->next != current->next->next) {
+        if (current->next->ID != ID) {
+            current = current->next;
+        } else {
+            toDelete = current->next;
+            current->next = current->next->next;
+            delete toDelete;
+            cout << "Element " << ID << " wurde entfernt" << endl;
+            break;
+        }
     }
-
-    toDelete = current->next;
-    current->next = current->next->next;
-    delete toDelete;
-    cout << "Element " << ID << " wurde entfernt" << endl;
 }
 
 int LISTE::printlist() {
-    if (head == nullptr) {
-        cout << "die Liste ist leer" << endl;
-        return 0;
-    }
     LISTELEM *current = head;
 
     cout << "Listenelemente: ";
     int count = 0;
-    while (current != current->next->next) {
-        cout << current->ID << " ";
+    while (current->next != current->next->next) {
+        cout << current->next->ID << " ";
         current = current->next;
         count++;
     }
