@@ -15,5 +15,12 @@ int main() {
     list.remove(1);
     list.printlist();
 
+    LISTE connectList;
+    connectList.append(6);
+    connectList.append(7);
+    connectList.append(8);
+
+    list.connect(connectList);
+    list.printlist();
     return 0;
 }
