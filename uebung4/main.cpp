@@ -10,10 +10,10 @@ int main() {
 
     list.insert(4);
 
-    list.printlist();
+    cout << list.printlist() << " Elemente sind in der Liste" << endl;
 
     list.remove(1);
-    list.printlist();
+    cout << list.printlist() << " Elemente sind in der Liste" << endl;
 
     LISTE connectList;
     connectList.append(6);
@@ -21,6 +21,7 @@ int main() {
     connectList.append(8);
 
     list.connect(connectList);
-    list.printlist();
+    connectList.append(9);
+    cout << list.printlist() << " Elemente sind in der Liste" << endl;
     return 0;
 }
