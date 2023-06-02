@@ -46,7 +46,23 @@ void LISTE::insert(int ID) {
 }
 
 void LISTE::connect(const LISTE &liste2) {
-    ;
+    LISTELEM *current = head;
+
+    while (current->next != current->next->next) {
+        current = current->next;
+    }
+
+    LISTELEM *l2Current = liste2.head->next;
+    while (l2Current != l2Current->next) {
+        auto neu = new LISTELEM();
+        neu->ID = l2Current->ID;
+        neu->next = current->next;
+
+        current->next = neu;
+        current = current->next;
+        l2Current = l2Current->next;
+
+    }
 }
 
 void LISTE::remove(int ID) {
