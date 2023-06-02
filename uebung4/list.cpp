@@ -81,6 +81,18 @@ int LISTE::printlist() {
         cout << "die Liste ist leer" << endl;
         return 0;
     }
+    LISTELEM* current = head;
+
+    cout << "Listenelemente: ";
+    int count = 0;
+    while (current != nullptr)
+    {
+        cout << current->ID << " ";
+        current = current->next;
+        count++;
+    }
+    cout << endl;
+    return count
 }
 
 
