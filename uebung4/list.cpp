@@ -74,11 +74,13 @@ void LISTE::remove(int ID) {
 
     delete current;
     cout << "Element mit der ID " << ID << " wurde entfernt" << endl;
-
 }
 
 int LISTE::printlist() {
-    ;
+    if (head == nullptr) {
+        cout << "die Liste ist leer" << endl;
+        return 0;
+    }
 }
 
 
