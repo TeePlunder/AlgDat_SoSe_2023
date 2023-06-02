@@ -34,9 +34,18 @@ void D_LISTE::insert(int ID)
 }
 
 
-int D_LISTE::printlist()
-{
-  ;
+int D_LISTE::printlist() {
+    D_LISTELEM *current = head;
+
+    cout << "Listenelemente: ";
+    int count = 0;
+    while (current->next != current->next->next) {
+        cout << current->next->ID << " ";
+        current = current->next;
+        count++;
+    }
+    cout << endl;
+    return count;
 }
 int D_LISTE::reverse_printlist()
 {
