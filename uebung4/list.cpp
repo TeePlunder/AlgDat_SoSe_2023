@@ -30,8 +30,6 @@ void LISTE::append(int ID) {
     }
     such->next = neu;
     neu->next = tail;
-
-    return;
 }
 
 void LISTE::insert(int ID) {
