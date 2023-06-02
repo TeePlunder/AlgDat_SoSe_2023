@@ -27,7 +27,6 @@ void LISTE::append(int ID) {
 
     while (such->next != such->next->next) {
         such = such->next;
-        count++;
     }
     such->next = neu;
     neu->next = tail;
