@@ -53,33 +53,16 @@ void LISTE::connect(const LISTE &liste2) {
 
 void LISTE::remove(int ID) {
     LISTELEM *current = head;
-    LISTELEM *prev = nullptr;
+    auto *toDelete = new LISTELEM();
 
-    while (current != nullptr && current->ID != ID) {
-        prev = current;
+    while (current->next != current->next->next && current->next->ID != ID) {
         current = current->next;
     }
 
-    if (current == nullptr) {
-        cout << "Das Element " << ID << " Konnte nicht gefunden werden" << endl;
-        return;
-    }
-
-    // fist element in list
-    if (prev == nullptr) {
-        head = current->next;
-        if (current == tail) {
-            tail = nullptr;
-        }
-    } else {
-        prev->next = current->next;
-        if (current == tail) {
-            tail = prev;
-        }
-    }
-
-    delete current;
-    cout << "Element mit der ID " << ID << " wurde entfernt" << endl;
+    toDelete = current->next;
+    current->next = current->next->next;
+    delete toDelete;
+    cout << "Element " << ID << " wurde entfernt" << endl;
 }
 
 int LISTE::printlist() {
