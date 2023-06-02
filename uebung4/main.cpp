@@ -2,6 +2,7 @@
 #include "list.h"
 
 int main() {
+    cout << "Einfach verkettete Liste:" << endl;
     LISTE list;
     list.append(1);
     list.append(2);
@@ -23,5 +24,9 @@ int main() {
     list.connect(connectList);
     connectList.append(9);
     cout << list.printlist() << " Elemente sind in der Liste" << endl;
+
+    cout << "-----------------------" << endl;
+    cout << "Doppelt verkettete Listen" << endl;
+
     return 0;
 }
