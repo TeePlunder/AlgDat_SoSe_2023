@@ -14,7 +14,14 @@ LISTE::LISTE() {
 }
 
 LISTE::~LISTE() {
-    ;
+    LISTELEM *current = head;
+    while (current->next != current->next->next) {
+        LISTELEM *toDelete = current->next;
+        current->next = current->next->next;
+        delete toDelete;
+    }
+    delete head;
+    delete tail;
 }
 
 void LISTE::append(int ID) {
