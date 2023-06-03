@@ -62,6 +62,8 @@ public:
 
     void remove(int ID);
 
+    void connect(const D_LISTE &liste);
+
     int reverse_printlist();//Elemente rueckwaerts ausgeben
 };
 
