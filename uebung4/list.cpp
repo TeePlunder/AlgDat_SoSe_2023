@@ -68,7 +68,6 @@ void LISTE::connect(const LISTE &list) {
         current->next = neu;
         current = current->next;
         l2Current = l2Current->next;
-
     }
 }
 

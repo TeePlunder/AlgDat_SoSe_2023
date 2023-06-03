@@ -56,6 +56,25 @@ void D_LISTE::insert(int ID) {
     current->next = neu;
 }
 
+void D_LISTE::connect(const D_LISTE &liste) {
+    D_LISTELEM *current = head;
+
+    while (current->next != current->next->next) {
+        current = current->next;
+    }
+    D_LISTELEM *l2Current = liste.head->next;
+    while (l2Current != l2Current->next) {
+        auto neu = new D_LISTELEM();
+        neu->ID = l2Current->ID;
+        neu->next = current->next;
+        neu->prev = current;
+
+        current->next = neu;
+        current = current->next;
+        l2Current = l2Current->next;
+    }
+}
+
 void D_LISTE::remove(int ID) {
     D_LISTELEM *current = head;
     D_LISTELEM *toDelete;
