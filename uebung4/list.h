@@ -28,7 +28,7 @@ public:
     void append(int ID);  //Element ans Ende anhaengen
     void insert(int ID);  //sortiertes Einfuegen
     void remove(int ID); //Element entfernen
-    void connect(const LISTE &liste2);//Liste2 wird angegaengt
+    void connect(const LISTE &list);//Liste2 wird angegaengt
     int printlist();     //Ausgabe aller Listenelemente
 };
 
