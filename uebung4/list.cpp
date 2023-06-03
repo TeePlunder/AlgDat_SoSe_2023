@@ -95,7 +95,7 @@ int LISTE::printlist() {
     cout << "Listenelemente: ";
     int count = 0;
     while (current->next != current->next->next) {
-        cout << "(ID: " << current->next->ID << ", next: " << current->next->next->ID << ") -->";
+        cout << "(ID: " << current->next->ID << ", next: " << current->next->next->ID << ") --> ";
         current = current->next;
         count++;
     }

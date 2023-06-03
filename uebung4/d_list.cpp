@@ -50,7 +50,7 @@ int D_LISTE::printlist() {
     int count = 0;
     while (current->next != current->next->next) {
         cout << "(prev: " << current->next->prev->ID << ", " << "ID: " << current->next->ID << ", " << "next: "
-             << current->next->next->ID << ") <-->";
+             << current->next->next->ID << ") <--> ";
         current = current->next;
         count++;
     }
