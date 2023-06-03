@@ -90,5 +90,15 @@ int D_LISTE::printlist() {
 }
 
 int D_LISTE::reverse_printlist() {
-    ;
+    D_LISTELEM *current = tail;
+
+    cout << "Reverse Listenelemente: ";
+    int count = 0;
+    while (current->prev != current->prev->prev) {
+        cout << current->prev->ID << " ";
+        current = current->prev;
+        count++;
+    }
+    cout << endl;
+    return count;
 }
