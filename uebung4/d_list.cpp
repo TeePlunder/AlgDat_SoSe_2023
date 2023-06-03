@@ -49,7 +49,9 @@ int D_LISTE::printlist() {
     cout << "Listenelemente: ";
     int count = 0;
     while (current->next != current->next->next) {
-        cout << current->next->ID << " ";
+        cout << "(prev: " << current->next->prev->ID << ", ";
+        cout << "ID: " << current->next->ID << ", ";
+        cout << "next: " << current->next->next->ID << ") ";
         current = current->next;
         count++;
     }
