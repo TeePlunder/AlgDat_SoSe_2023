@@ -95,7 +95,8 @@ int D_LISTE::reverse_printlist() {
     cout << "Reverse Listenelemente: ";
     int count = 0;
     while (current->prev != current->prev->prev) {
-        cout << current->prev->ID << " ";
+        cout << "(next: " << current->prev->next->ID << ", " << "ID: " << current->prev->ID << ", " << "prev: "
+             << current->prev->prev->ID << ") ";
         current = current->prev;
         count++;
     }
