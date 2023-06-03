@@ -1,7 +1,7 @@
 # Algorithms and Data Structures
 
-Module Site -> [here](https://www.b-tu.de/modul/11756)
-Credit Points: 10
+- Module Site -> [here](https://www.b-tu.de/modul/11756)
+- Credit Points: 10
 
 ## Content
 
