@@ -52,14 +52,14 @@ void LISTE::insert(int ID) {
     current->next = neu;
 }
 
-void LISTE::connect(const LISTE &liste2) {
+void LISTE::connect(const LISTE &list) {
     LISTELEM *current = head;
 
     while (current->next != current->next->next) {
         current = current->next;
     }
 
-    LISTELEM *l2Current = liste2.head->next;
+    LISTELEM *l2Current = list.head->next;
     while (l2Current != l2Current->next) {
         auto neu = new LISTELEM();
         neu->ID = l2Current->ID;
