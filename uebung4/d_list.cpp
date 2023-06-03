@@ -27,6 +27,19 @@ D_LISTE::~D_LISTE() {
     ;
 }
 
+void D_LISTE::append(int ID) {
+    D_LISTELEM *current = head;
+    auto neu = new D_LISTELEM();
+    neu->ID = ID;
+
+    while (current->next != current->next->next) {
+        current = current->next;
+    }
+    neu->prev = current;
+    neu->next = tail;
+    current->next = neu;
+}
+
 void D_LISTE::insert(int ID) {
     D_LISTELEM *current = head;
     auto *neu = new D_LISTELEM();

@@ -55,6 +55,8 @@ public:
 
     ~D_LISTE();
 
+    void append(int ID);
+
     void insert(int ID);  //sortiertes Einfuegen
     int printlist();
 
