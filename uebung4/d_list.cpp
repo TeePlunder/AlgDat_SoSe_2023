@@ -37,6 +37,7 @@ void D_LISTE::append(int ID) {
     }
     neu->prev = current;
     neu->next = tail;
+    tail->prev = neu;
     current->next = neu;
 }
 
