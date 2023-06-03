@@ -60,6 +60,8 @@ public:
     void insert(int ID);  //sortiertes Einfuegen
     int printlist();
 
+    void remove(int ID);
+
     int reverse_printlist();//Elemente rueckwaerts ausgeben
 };
 

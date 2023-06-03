@@ -55,6 +55,23 @@ void D_LISTE::insert(int ID) {
     current->next = neu;
 }
 
+void D_LISTE::remove(int ID) {
+    D_LISTELEM *current = head;
+    D_LISTELEM *toDelete;
+
+    while (current->next != current->next->next) {
+        if (current->next->ID != ID) {
+            current = current->next;
+        } else {
+            toDelete = current->next;
+            current->next->next->prev = current;
+            current->next = current->next->next;
+            delete toDelete;
+            cout << "Element " << ID << " wurde entfernt" << endl;
+            break;
+        }
+    }
+}
 
 int D_LISTE::printlist() {
     D_LISTELEM *current = head;
