@@ -30,6 +30,7 @@ template <typename ST>
 ST STAPEL<ST>::pop()
 {
 	if(empty()) {
+        std::cout << "Die Liste ist Leer, es kann kein Element entfernt werden" << std::endl;
         return (ST)0;
     }
     S_LISTELEM<ST> *temp;
