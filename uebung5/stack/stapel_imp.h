@@ -27,7 +27,18 @@ void STAPEL<ST>::push(ST d)
 template <typename ST>
 ST STAPEL<ST>::pop()
 {
-	;
+	if(empty()) {
+        return (ST)0;
+    }
+    S_LISTELEM<ST> *temp;
+    ST removed;
+
+    temp = this->first;
+    this->first = this->first->next;
+    removed = temp->daten;
+    delete temp;
+    count--;
+    return removed;
 }
 
 template <typename ST>
