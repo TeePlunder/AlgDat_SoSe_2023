@@ -37,7 +37,7 @@ template <typename ST>
 
 int STAPEL<ST>::number()
 {
-	;
+    return count;
 }
 
 #endif /* STAPEL_IMP_H_ */
