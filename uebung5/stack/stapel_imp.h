@@ -31,7 +31,7 @@ ST STAPEL<ST>::pop()
 template <typename ST>
 bool STAPEL<ST>::empty()
 {
-	;
+    return this->first == 0;
 }
 template <typename ST>
 
