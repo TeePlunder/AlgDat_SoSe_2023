@@ -13,7 +13,9 @@ STAPEL<ST>::STAPEL()
 template <typename ST>
 STAPEL<ST>::~STAPEL()
 {
-	;
+    while (empty()) {
+        pop();
+    }
 }
 template <typename ST>
 void STAPEL<ST>::push(ST d)
