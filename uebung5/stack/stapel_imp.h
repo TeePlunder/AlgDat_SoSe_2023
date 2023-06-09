@@ -4,7 +4,6 @@
 
 #include"stapel.h"
 
-
 template <typename ST>
 STAPEL<ST>::STAPEL()
 {
@@ -19,7 +18,10 @@ STAPEL<ST>::~STAPEL()
 template <typename ST>
 void STAPEL<ST>::push(ST d)
 {
-	;
+	auto* newElement = new S_LISTELEM<ST>(d);
+    newElement->next = this->first;
+    this->first = newElement;
+    this->count++;
 }
 
 template <typename ST>
